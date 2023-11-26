@@ -89,9 +89,9 @@ fn sudoku_validation(sudoku: [[i32; 9]; 9]) -> bool {
 
 fn next_empty_space(sudoku: [[i32; 9]; 9], start: (usize, usize)) -> (usize, usize) {
     let (l_r, l_c) = start; // Having a start pos to reduce computing
-    for r in l_r..9{
-        for c in l_c..9{
-            if sudoku[r][c] == 0{
+    for r in l_r..9 {
+        for c in l_c..9 {
+            if sudoku[r][c] == 0 {
                 return (r, c); // Returned the found next empty space
             }
         }
@@ -100,7 +100,7 @@ fn next_empty_space(sudoku: [[i32; 9]; 9], start: (usize, usize)) -> (usize, usi
     (10, 10) // If sudoku is full
 }
 
-fn is_placement_valid(sudoku: [[i32; 9]; 9], guess: &i32, r: usize, c: usize) -> bool{
+fn is_placement_valid(sudoku: [[i32; 9]; 9], guess: &i32, r: usize, c: usize) -> bool {
     if sudoku[r].contains(guess) { // Checking for same number in the same row
         return false;
     }
